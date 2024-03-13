@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Laravelフレームワーク</title>
+  <meta name="description" content="ディスクリプションを入力">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
+  <!-- [if lt IE 9] -->
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <!-- [endif] -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!----- main ----->
+  <div id="sidemenu"></div>
+  <div class="content pt-2">
+    <container>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h5 class="h5">プロジェクト内での作業</h5>
+          <p>参照）<br>
+            <a target="_blank" href="https://qiita.com/ekzemplaro/items/c74e7431a8a90e2feb03" >https://qiita.com/ekzemplaro/items/c74e7431a8a90e2feb03</a>
+            <h6>①web.php</h6>
+            
+　末尾に追記
+<div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">routes/web.php</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>Route::get('hello', 'App\Http\Controllers\HelloController@index');</code></pre>
+  </div>
+</div></p>
+<h6>②コントローラーを作成</h6>
+<p><div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">ターミナル</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>php artisan make:controller HelloController</code></pre>
+  </div>
+</div>
+　Enterして実行</p>
+
+<h6>③viewを設定する</h6>
+<p>　HelloController.php が作成されるので
+<div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">app/Http/Controllers/</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>class Controller extends BaseController
+{
+    public function index(){
+        return view('hello');
+    }
+}</code></pre>
+</div>
+</div>
+　と追記<br>
+　キーを設定する場合は<br>
+<div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">ターミナル</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>Return view(ʻhelloʼ, compact(ʻstrʼ , ʼstr2ʼ));</code></pre>
+</div>
+</div>
+　compactの配列として記述する</p>
+<h6>④viewを作成</h6>
+<p>　bladeのテンプレートが使える様にresources/views/に<br>
+　viewのファイル名の拡張子の前に「.blade」を付けて作成する。<br>
+　もしくは
+<div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">ターミナル</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>touch resources/views/任意のファイル名.blade.php</code></pre>
+</div>
+</div>
+　作成後、htmlなどのデータを入力<br>
+　キーを読み込む記述をする場合は、
+<div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">viewのphp</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>&lt;p&gt;{{$キー}}&lt;/p&gt;</code></pre>
+</div>
+</div>
+　のように記述する</p>
+⑤プレビューサーバーを起動<br>
+<p><div class="code-wrap">
+  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+    <div class="placename small">ターミナル</div>
+    <div><button class="copy-button small">コピー</button></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center code-container">
+    <pre class="code-block"><code>php artisan serve</code></pre>
+</div>
+</div>
+
+　と入力しEnter</・p>
+          <h6>&lt;簡易サーバーを起動してプロジェクトをプレビュー&gt;</h6>
+          <p>
+
+            　と入力してEnter<br>
+            　Ctrl＋c で終了
+          </p>
+          <div style="width: 100%;" class="px-2 pt-5">
+            <div style="float: left;"><a href="index.html">&lt;&lt;前へ</a></div>
+            <div style="float: right;"><a href="index.html">&gt;&gt;次へ</a></div>
+        </div>
+
+        </div>
+      </div>
+    </container>
+  </div>
+  <!----- /main ----->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
