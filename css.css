@@ -11,8 +11,46 @@ p{
 .ind{
   margin-left: 1em;
 }
-#code-block {
-  background-color: black;
+
+/*ボタンとアドレス*/
+.code-wrap{
+  padding:0 15px;
+}
+.code-add{
+  background:#333;
+  color:white;
+  border-radius: 6px 6px 0 0;
+}
+.placename {
+  margin: 5px 10px;
+}
+
+/* ボタンのスタイル */
+.copy-button {
   color: white;
+  background-color: #333;
+  border: none;
+  padding-right:10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 1px 0 ;
+}
+
+/* コードブロックのコンテナ */
+.code-container {
+  background-color: black;
   padding: 10px;
+  border-radius: 0 0 6px 6px;
+}
+
+/* コードブロックのスタイル */
+.code-block {
+  color:white;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
 }
