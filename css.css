@@ -2,25 +2,26 @@ body {
       font-size: 0.875rem;
     }
 .h5 {
-  font-weight: normal;
-  color:white;
-  background-color: black;
-  padding:5px;
+      font-weight: normal;
+      color:white;
+      background-color: black;
+      padding:5px;
   
 }
 p{
-  margin-left: 1em;
+      margin-left: 1em;
+      font-size: 0.875rem;
 }
 .ind{
-  margin-left: 1em;
+      margin-left: 1em;
 }
 
 /*ボタンとアドレス*/
 .code-wrap{
-  padding:0 15px;
+      padding:0 15px;
 }
 .code-add{
-  background:#333;
+      background:#333;
   color:white;
   border-radius: 6px 6px 0 0;
 }
