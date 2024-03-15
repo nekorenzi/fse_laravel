@@ -9,6 +9,17 @@
       margin-bottom: 0.5em;
       font-size:0.875rem;
 }
+.explanation{ /*　解説　*/
+      font-size: 12px;
+      padding-right:2em;
+      margin-top:2px;
+      margin-bottom:-2em;
+      color:#698aab;
+}
+.overline{ /*　解説のライン　*/
+      text-decoration:overline;
+      text-decoration-color: red;
+}
 /*ボタンとアドレス*/
 .code-add{
       background:#333;
