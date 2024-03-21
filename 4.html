@@ -13,7 +13,13 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <!-- Highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
-　<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <style>
+    /* シンタックスハイライトで使用される色を指定 */
+    .hljs-keyword { color: magenta; } /* キーワードの色をマゼンタに設定 */
+    .hljs-string { color: green; } /* 文字列の色を緑に設定 */
+    .hljs-attribute { color: cyan; } /* 属性の色をシアンに設定 */
+    /* 他のキーワードや構文に対しても同様に色を指定 */
+</style>
   <!-- css] -->
   <link rel="stylesheet" href="css.css">
   <!-- [if lt IE 9] -->
@@ -143,7 +149,7 @@ migrations内の設定した項目がMySQLに作成される。
     </container>
   </div>
   <!----- /main ----->
-
+　<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
   </script>
