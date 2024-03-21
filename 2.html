@@ -39,7 +39,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
-                  class="code-block"><code>Route::get('hello', 'App\Http\Controllers\HelloController@index');</code></pre>
+                  class="code-block"><code><span class="keysky">Route</span><span class="keylyellow">::get</span><span class="keyyellow">(</span><span class="keyorange">'hello'</span>, <span class="keyorange">'App\Http\Controllers\HelloController@index'</span><span class="keyyellow">)</span>;</code></pre>
               </div>
             </div>
             <div class="w-100 explanation" style="margin-bottom:-5px;">　　　　　　　　<span class="overline">URLになる</span>　　　　　　　　　　　　　　　　<span class="overline">　 コントローラー名 　</span>　<span class="overline">ファンクション名</span></div>
@@ -67,23 +67,23 @@
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>class Controller extends BaseController
-{
-    public function index(){
-        return view('hello');
-    }
-}</code></pre>
+                <pre class="code-block"><code><span class="keyblue">class</span> <span class="keysky">Controller</span> <span class="keyblue">extends</span> <span class="keysky">BaseController</span>
+<span class="keyyellow">{</span>
+    <span class="keyblue">public function</span> <span class="keylyellow">index</span><span class="keypink">(){</span>
+        <span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span><span class="keyblue">)</span>;
+    <span class="keypink">}</span>
+<span class="keyyellow">}</span></code></pre>
               </div>
             </div>
             と追記<br>
             キーを設定する場合は<br>
             <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                <div class="placename small">ターミナル</div>
+                <div class="placename small">app/Http/Controllers/HelloController.php</div>
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>Return view(ʻhelloʼ, compact(ʻstrʼ , ʼstr2ʼ));</code></pre>
+                <pre class="code-block"><code><span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">ʻhelloʼ</span>, <span class="keylyellow">compact<span class="keyyellow">(</span><span class="keyorange">ʻstrʼ</span> , <span class="keyorange">ʼstr2ʼ</span><span class="keyyellow">)</span><span class="keyblue">)</span>;</code></pre>
               </div>
             </div>
             compactの配列として記述する

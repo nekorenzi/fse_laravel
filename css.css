@@ -58,3 +58,41 @@
       word-wrap: break-word;
       margin: 0;
 }
+
+/* CSS スタイルを使用してコードの色分けを設定 */
+pre {
+      background-color: black;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Courier New", Courier, monospace;
+}
+
+/* 各言語のキーワードに対する色分け */
+.keyblue {
+      color: #38a1db;
+}
+.keysky {
+      color: #2dd6ba;
+}
+.keypink {
+      color: #c550e5;
+}
+.keygreen {
+      color: #6a9955;
+}
+.keyyellow {
+      color: #fffa00;
+}
+.keylyellow{
+      color: #f2f2b0;
+}
+.keyorange{
+      color:#f39800;
+}
+.comment {
+      color: gray;
+}
+
+
+
+

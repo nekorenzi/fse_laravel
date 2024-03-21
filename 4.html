@@ -11,15 +11,6 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
-  <style>
-    /* シンタックスハイライトで使用される色を指定 */
-    .hljs-keyword { color: magenta; } /* キーワードの色をマゼンタに設定 */
-    .hljs-string { color: green; } /* 文字列の色を緑に設定 */
-    .hljs-attribute { color: cyan; } /* 属性の色をシアンに設定 */
-    /* 他のキーワードや構文に対しても同様に色を指定 */
-</style>
   <!-- css] -->
   <link rel="stylesheet" href="css.css">
   <!-- [if lt IE 9] -->
@@ -46,12 +37,12 @@
                     <div class="placename small">.env</div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
-                    <pre class="code-block"><code>DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=[プロジェクト名]
-DB_USERNAME=root
-DB_PASSWORD=</code></pre>
+                    <pre class="code-block"><code><span class="keyblue">DB_CONNECTION</span>=mysql
+<span class="keyblue">DB_HOST</span>=127.0.0.1
+<span class="keyblue">DB_PORT</span>=3306
+<span class="keyblue">DB_DATABASE</span>=[プロジェクト名]
+<span class="keyblue">DB_USERNAME</span>=root
+<span class="keyblue">DB_PASSWORD</span>=</code></pre>
                   </div>
                 </div>
               </div>
@@ -83,14 +74,14 @@ DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定す�
                 <div class="placename small">freelaravel > database › migrations > 2023_01_16_054904_create_tests_table.php > ...</div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>      public function up()
-      {
-          Schema::create('tests', function (Blueprint $table) {
-          $table->id();
-          $table->timestamps();
-          // この2つは重要なので絶対消さない
-          });
-      }</code></pre>
+                <pre class="code-block"><code><span class="keyblue">public function</span> <span class="keylyellow">up</span><span class="keypink">()</span>
+<span class="keypink">{</span>
+    <span class="keysky">Schema</span><span class="keylyellow">::create</span><span class="keyblue">(</span><span class="keyorange">'tests'</span>, <span class="keyblue">function</span> <span class="keyyellow">(</span><span class="keysky">Blueprint</span> <span class="keyblue">$table</span><span class="keyyellow">) {</span>
+        <span class="keyblue">$table</span><span class="keylyellow">->id</span><span class="keypink">()</span>;
+        <span class="keyblue">$table</span><span class="keylyellow">->timestamps</span><span class="keypink">()</span>;
+        <span class="comment">// この2つは重要なので絶対消さない</span>
+        <span class="keyyellow">}</span><span class="keyblue">)</span>;
+<span class="keypink">}</span></code></pre>
               </div>
             </div>
             ※$table->id(); $table->timestamps(); の2つは重要なので絶対消さない<br>
@@ -101,19 +92,19 @@ DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定す�
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>      public function up()
-      {
-          Schema::create('tests', function (Blueprint $table) {
-          $table->id();
-          $table->string('name');
-          $table->date('birth');
-          $table->integer('sei');
-          $table->timestamps();
-          });
-      }</code></pre>
+                <pre class="code-block"><code><span class="keyblue">public function</span> <span class="keylyellow">up</span><span class="keypink">()</span>
+<span class="keypink">{</span>
+    <span class="keysky">Schema</span><span class="keylyellow">::create</span><span class="keyblue">(</span><span class="keyorange">'tests'</span>, <span class="keyblue">function</span> <span class="keyyellow">(</span><span class="keysky">Blueprint</span> <span class="keyblue">$table</span><span class="keyyellow">) {</span>
+        <span class="keyblue">$table</span><span class="keylyellow">->id</span><span class="keypink">()</span>;
+        <span class="keyblue">$table</span><span class="keylyellow">->string</span><span class="keypink">(</span><span class="keyorange">'name'</span><span class="keypink">)</span>;
+        <span class="keyblue">$table</span><span class="keylyellow">->date</span><span class="keypink">(</span><span class="keyorange">'birth'</span><span class="keypink">)</span>;
+        <span class="keyblue">$table</span><span class="keylyellow">->integer</span><span class="keypink">(</span><span class="keyorange">'sei'</span><span class="keypink">)</span>;
+        <span class="keyblue">$table</span><span class="keylyellow">->timestamps</span><span class="keypink">()</span>;
+        <span class="keyyellow">}</span><span class="keyblue">)</span>;
+<span class="keypink">}</span></code></pre>
               </div>
             </div>
-            $table->[テーブル項目のタイプ]（ʼ[テーブルの項目名]ʼ）;
+            <span class="keyblue">$table</span>->[テーブル項目のタイプ]（ʼ[テーブルの項目名]ʼ）;
 で必要な項目を入力する<br>
 migrationsのデータは作成したデータ以外は見本なので消しておく</div>
 <div class="ind">●マイグレートを実行（テーブルの作成）
@@ -149,7 +140,6 @@ migrations内の設定した項目がMySQLに作成される。
     </container>
   </div>
   <!----- /main ----->
-　<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
   </script>
