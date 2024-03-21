@@ -50,10 +50,10 @@
                 DB_CONNECTION=mysql -> 使用しているデータの種類<br>
                 DB_HOST=127.0.0.1　　　 -> データがどこにあるか自分のパソコンの場合
                 　　　　　　　　 　　 　　　lorcalhost or コンピュータ名 or 127.0.0.1<br>
-DB_PORT=3306　　　　　-> XAMPPのMySQLのPort番号を入れる<br>
-DB_DATABASE=helloDB2　-> MySQLで作成したデータベースの名前<br>
-DB_USERNAME=root <br>
-DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定する<br>
+                DB_PORT=3306　　　　　-> XAMPPのMySQLのPort番号を入れる<br>
+                DB_DATABASE=helloDB2　-> MySQLで作成したデータベースの名前<br>
+                DB_USERNAME=root <br>
+                DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定する<br>
               </div>
             </div>
           </div>
@@ -65,13 +65,14 @@ DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定す�
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>php artisan make:migration create_tests_table --create=tests</code></pre>
+                <pre class="code-block"><code><span class="keyyellow">php</span> artisan make:migration create_tests_table --create=tests</code></pre>
               </div>
             </div>
             datebace/migrations　に　[本日の日時]_create_[テーブル名]_table.php　で新しくデータが作成されているのでそれを開く
             <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                <div class="placename small">freelaravel > database › migrations > 2023_01_16_054904_create_tests_table.php > ...</div>
+                <div class="placename small">freelaravel > database › migrations >
+                  2023_01_16_054904_create_tests_table.php > ...</div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre class="code-block"><code><span class="keyblue">public function</span> <span class="keylyellow">up</span><span class="keypink">()</span>
@@ -88,7 +89,8 @@ DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定す�
             この2行の間に必要な項目を追記していく
             <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                <div class="placename small">freelaravel > database › migrations > 2023_01_16_054904_create_tests_table.php > ...</div>
+                <div class="placename small">freelaravel > database › migrations >
+                  2023_01_16_054904_create_tests_table.php > ...</div>
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
@@ -104,40 +106,57 @@ DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定す�
 <span class="keypink">}</span></code></pre>
               </div>
             </div>
-            <span class="keyblue">$table</span>->[テーブル項目のタイプ]（ʼ[テーブルの項目名]ʼ）;
-で必要な項目を入力する<br>
-migrationsのデータは作成したデータ以外は見本なので消しておく</div>
-<div class="ind">●マイグレートを実行（テーブルの作成）
-<div class="code-wrap">
+            $table->[テーブル項目のタイプ]（ʼ[テーブルの項目名]ʼ）;
+            で必要な項目を入力する<br>
+            migrationsのデータは作成したデータ以外は見本なので消しておく</div>
+          <div class="ind">●マイグレートを実行（テーブルの作成）
+            <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
                 <div class="placename small">ターミナル</div>
                 <div><button class="copy-button small">コピー</button></div>
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
-                <pre class="code-block"><code>php artisan migrate</code></pre>
+                <pre class="code-block"><code><span class="keyyellow">php</span> artisan migrate</code></pre>
               </div>
             </div>
-migrations内の設定した項目がMySQLに作成される。
+            migrations内の設定した項目がMySQLに作成される。
           </div>
-          <h6 class="mt-3">データベースを手動で作成</h6>
-          <div style="text-align: center;">
-            <a href="img\2.png"><img src="img\2.png" style="width: 40%; margin:0 1em;"></a>
-            <a href="img\3.jpg"><img src="img\3.jpg" style="width: 40%; margin:0 1em;"></a>
+          <h6 class="mt-3">■モデルの作成</h6>
+          <div class="ind">
+            <div class="code-wrap">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">ターミナル</div>
+                <div><button class="copy-button small">コピー</button></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre class="code-block"><code><span class="keyyellow">php</span> artisan make:model Test
+<span class="comment">// php artisan make:model [末尾のsを取ったテーブル名]</span></code></pre>
+              </div>
+            </div>
+            app>Modelsに作成される<br>
+            この名前の付け方と作成で、テーブルとモデルが紐づいた状態で作成される
           </div>
-          <div class="ind">XAMPPのMySQL「Admin」をクリックしてブラウザでMySQLを開く(ブラウザに開きます)<br>
-            phpMyAdminの左メニューのツリー一番上の「新規作成」をクリックし、表示された右のページに新規データベース名を入力。<br>
-            utf8のどれかが選ばれているのを確認(utf8が含まれるものならどれでもいいらしい)「作成」<br>
-            <a target="_blank"
-              href="https://qiita.com/ekzemplaro/items/c74e7431a8a90e2feb03">https://qiita.com/ekzemplaro/items/c74e7431a8a90e2feb03</a>
+          <h6 class="mt-3">■作成したモデルをコントローラーに設定</h6>
+          <div class="ind">
+            <div class="code-wrap">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">ターミナル</div>
+                <div><button class="copy-button small">コピー</button></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre class="code-block"><code><span class="keyblue">use</span> App\Models\<span class="keysky">Test</span>;
+<span class="comment">// use App\Models\[モデル作成で入力した名前];</span></code></pre>
+              </div>
+            </div>
           </div>
           <div style="width: 100%;" class="px-2 pt-5">
-            <div style="float: left;"><a href="2.html">&lt;&lt;前へ</a></div>
-            <div style="float: right;"><a href="4.html">&gt;&gt;次へ</a></div>
+            <div style="float: left;"><a href="3.html">&lt;&lt;前へ</a></div>
+            <div style="float: right;"><a href="5.html">&gt;&gt;次へ</a></div>
           </div>
         </div>
       </div>
-      </div>
-    </container>
+  </div>
+  </container>
   </div>
   <!----- /main ----->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
