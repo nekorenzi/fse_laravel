@@ -17,7 +17,7 @@ document.querySelectorAll('.copy-button').forEach(button => {
             .then(() => {
                 console.log('コピーが成功しました。');
                 // コピーが成功したらコピーしましたテキストを表示する
-                var copyStatus = this.nextElementSibling;
+                var copyStatus = this.parentElement.querySelector('.copy-status');
                 copyStatus.style.display = 'inline';
                 // 2秒後にテキストを非表示にする
                 setTimeout(() => {
