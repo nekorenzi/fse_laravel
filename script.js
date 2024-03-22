@@ -26,3 +26,18 @@ document.querySelectorAll('.copy-button').forEach(button => {
             .catch(err => console.error('コピー中にエラーが発生しました:', err));
     });
 });
+// 新しい img 要素を作成
+var imgElement = document.createElement('img');
+imgElement.src = 'img/copy2.svg';
+imgElement.alt = 'Copy icon';
+imgElement.classList.add('cicon'); // 必要に応じてクラスを追加
+
+// コピー成功のメッセージを表示する要素を取得
+var messageElement = document.getElementById('copySuccessMessage');
+
+// メッセージをクリア
+messageElement.innerHTML = '';
+
+// 画像要素とテキストを追加
+messageElement.appendChild(imgElement);
+messageElement.appendChild(document.createTextNode('コピーしました'));
