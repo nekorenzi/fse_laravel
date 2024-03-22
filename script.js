@@ -16,12 +16,11 @@ document.querySelectorAll('.copy-button').forEach(button => {
         navigator.clipboard.writeText(codeText)
             .then(() => {
                 console.log('コピーが成功しました。');
-                // コピーが成功したらコピーしましたテキストを表示する
-                var copyStatus = this.parentElement.querySelector('.copy-status');
-                copyStatus.style.display = 'inline';
-                // 2秒後にテキストを非表示にする
+                // ボタンのテキストを「コピーしました」に変更する
+                this.textContent = 'コピーしました';
+                // 2秒後にテキストを元に戻す
                 setTimeout(() => {
-                    copyStatus.style.display = 'none';
+                    this.textContent = 'コピー';
                 }, 2000);
             })
             .catch(err => console.error('コピー中にエラーが発生しました:', err));
