@@ -14,7 +14,16 @@ document.querySelectorAll('.copy-button').forEach(button => {
         
         var codeText = codeBlock.innerText;
         navigator.clipboard.writeText(codeText)
-            .then(() => console.log('コピーが成功しました。'))
+            .then(() => {
+                console.log('コピーが成功しました。');
+                // テキストを変更するための要素を取得し、表示する
+                var copyStatus = this.nextElementSibling;
+                copyStatus.style.display = 'inline';
+                // 2秒後にテキストを元に戻す
+                setTimeout(() => {
+                    copyStatus.style.display = 'none';
+                }, 2000);
+            })
             .catch(err => console.error('コピー中にエラーが発生しました:', err));
     });
 });
