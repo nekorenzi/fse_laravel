@@ -16,10 +16,10 @@ document.querySelectorAll('.copy-button').forEach(button => {
         navigator.clipboard.writeText(codeText)
             .then(() => {
                 console.log('コピーが成功しました。');
-                // テキストを変更するための要素を取得し、表示する
+                // コピーが成功したらコピーしましたテキストを表示する
                 var copyStatus = this.nextElementSibling;
                 copyStatus.style.display = 'inline';
-                // 2秒後にテキストを元に戻す
+                // 2秒後にテキストを非表示にする
                 setTimeout(() => {
                     copyStatus.style.display = 'none';
                 }, 2000);
