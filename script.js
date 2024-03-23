@@ -17,22 +17,32 @@ document.querySelectorAll('.copy-button').forEach(button => {
             .then(() => {
                 console.log('コピーが成功しました。');
                 // ボタンのテキストを「コピーしました」に変更する
-                this.textContent = 'コピーしました';
-                // 2秒後にテキストを元に戻す
+                button.textContent = 'コピーしました';
+                // 画像要素を作成し、ボタンの内部に挿入する
+                    var imgElement = document.createElement('img');
+                    imgElement.src = 'img/copy2.svg';
+                    imgElement.alt = 'Copy icon';
+                    imgElement.classList.add('cicon');
+                    // サイズ指定
+                    imgElement.width = 15;
+                    imgElement.height = 15;
+                    button.innerHTML = '';
+                    button.appendChild(imgElement);
+                    button.appendChild(document.createTextNode(' コピーしました'));
+                // 2秒後に元の状態に戻す
                 setTimeout(() => {
-                    this.textContent = 'コピー';
+                    button.textContent = 'コピー';
+                    var imgElement = document.createElement('img');
+                    imgElement.src = 'img/copy1.svg';
+                    imgElement.alt = 'Copy icon';
+                    imgElement.classList.add('cicon');
+                    // サイズ指定
+                    imgElement.width = 15;
+                    imgElement.height = 15;
+                    button.innerHTML = '';
+                    button.appendChild(imgElement);
+                    button.appendChild(document.createTextNode(' コピー'));
                 }, 2000);
-                
-                // 画像要素を作成し、メッセージと一緒に表示する要素に追加
-                var imgElement = document.createElement('img');
-                imgElement.src = 'img/copy2.svg';
-                imgElement.alt = 'Copy icon';
-                imgElement.classList.add('cicon');
-                
-                var messageElement = document.getElementById('copySuccessMessage');
-                messageElement.innerHTML = ''; // 既存のコンテンツをクリア
-                messageElement.appendChild(imgElement);
-                messageElement.appendChild(document.createTextNode('コピーしました'));
             })
             .catch(err => console.error('コピー中にエラーが発生しました:', err));
     });
