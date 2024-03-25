@@ -27,7 +27,33 @@
     <container>
       <div class="row justify-content-center">
         <div class="col-md-8">
-          
+          <h6>■コントローラーにデータベースの抽出を記入しviewに表示させる</h6>
+          <span class="explanation">①と②どちらを使うかは管理者の指示に従う<br></span>
+          ①作成したモデルとテーブルの紐付け（Eloquent）を使用しviewに表示させる
+<div class="d-flex">
+              <div class="w-50">
+                <div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                    <div class="placename small">.env</div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container">
+                    <pre class="code-block"><code><span class="keylblue">$result</span>=<span class="keysky">Test</span><span class="keyyellow">::all</span><span class="keyblue">()</span>;
+</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div class="" style="margin-left:10px;">
+                <br>
+                DB_CONNECTION=mysql -> 使用しているデータの種類<br>
+                DB_HOST=127.0.0.1　　　 -> データがどこにあるか自分のパソコンの場合
+                　　　　　　　　 　　 　　　lorcalhost or コンピュータ名 or 127.0.0.1<br>
+                DB_PORT=3306　　　　　-> XAMPPのMySQLのPort番号を入れる<br>
+                DB_DATABASE=helloDB2　-> MySQLで作成したデータベースの名前<br>
+                DB_USERNAME=root <br>
+                DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定する<br>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </container>
@@ -38,5 +64,4 @@
   </script>
   <script src="script.js"></script>
 </body>
-
 </html>
