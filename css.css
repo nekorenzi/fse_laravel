@@ -68,9 +68,12 @@ pre {
       font-family: "Courier New", Courier, monospace;
 }
 
-/* 各言語のキーワードに対する色分け */
+/* codeに対する色分け */
 .keyblue {
       color: #38a1db;
+}
+.keylblue {
+      color: #89c3eb;
 }
 .keysky {
       color: #2dd6ba;
