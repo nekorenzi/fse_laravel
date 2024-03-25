@@ -77,37 +77,6 @@
 <span class="keyyellow">}</span></code></pre>
               </div>
             </div>
-            と追記<br>
-            キーを読み込む記述をする場合<br>
-            <div class="d-flex">
-              <div class="w-80 flex-grow-1">
-                <div class="code-wrap">
-                  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                    <div class="placename small">app/Http/Controllers/HelloController.php</div>
-                    <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center code-container">
-                    <pre class="code-block"><code>        <span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>'<span class="keyyellow">)</span><span class="keyblue">)</span>;
-                        <span class="comment">// compactの配列として記述する</span></code></pre>
-                  </div>
-                </div>
-              </div>
-
-              <div class="w-20 ms-4">
-              <div class="code-wrap">
-                <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                  <div class="placename small">resources/views/hello.blade.php</div>
-                  <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center code-container">
-                  <pre class="code-block"><code>&lt;<span class="keyblue">p</span>&gt;{{$str}}&lt;/<span class="keyblue">p</span>&gt;
-&lt;<span class="keyblue">p</span>&gt;{{$str2}}&lt;/<span class="keyblue">p</span>&gt;
-<span class="comment">&lt;!-- キーを読み込む記述をする場合は、
-    &lt;p&gt;{{$キー}}&lt;/p&gt;と記述 --&gt;</span></code></pre>
-                </div>
-              </div>
-            </div>
-            </div>
           </div>
           
           <div style="width: 100%;" class="px-2 pt-5">
