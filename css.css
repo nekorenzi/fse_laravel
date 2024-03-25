@@ -1,4 +1,4 @@
-.h5 {
+h5 {
       font-weight: normal;
       color:white;
       background-color: black;
@@ -25,6 +25,7 @@
       background:#333;
       color:white;
       border-radius: 6px 6px 0 0;
+      border:1px black;
 }
 .placename {
       margin: 5px 10px;

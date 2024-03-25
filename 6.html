@@ -30,7 +30,8 @@
           <h5 class="mb-0">■コントローラーにデータベースの抽出を記入しviewに表示させる</h5>
           <span class="explanation">①と②どちらを使うかは管理者の指示に従う</span>
           <div class="ind">
-            <h6 class="mb-1">①作成したモデルとテーブルの紐付け（Eloquent）を使用しviewに表示させる</h6>
+            <h6 class="mb-1">②モデルを使用せずコントローラーに直接データベースへのアクセスを書きviewに表示させる</h6>
+            ●コントローラーにデータベースを読み込む
             <div class="d-flex">
               <div class="w-50">
                 <div class="code-wrap">
@@ -45,37 +46,15 @@
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
-                      class="code-block"><code><span class="keylblue">$result</span>=<span class="keysky">Test</span><span class="keylyellow">::all</span><span class="keyblue">()</span>;</code></pre>
+                      class="code-block"><code><span class="keylblue">use</span> App\Models\Test;
+<span class="keylblue">use</span> Illuminate\Support\Facades\<span class="keysky">DB</span>;</code></pre>
                   </div>
                 </div>
               </div>
               <div class="" style="margin-left:10px;"><br>
-                <br>
-                ＝　select * from tests
-              </div>
-            </div>
-            ●select * from tests
-            <div class="d-flex">
-              <div class="w-50">
-                <div class="code-wrap">
-                  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-                    <div class="placename small">app/Http/Controllers/HelloController.php</div>
-                    <div>
-                      <button class="copy-button small">
-                        <img src="img/copy1.svg" alt="Copy icon" style="width:15px;">
-                        コピー
-                      </button>
-                    </div>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center code-container">
-                    <pre
-                      class="code-block"><code><span class="keylblue">$result</span>=<span class="keysky">Test</span><span class="keylyellow">::all</span><span class="keyblue">()</span>;</code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="" style="margin-left:10px;"><br>
-                <br>
-                ＝　select * from tests
+                DBクラスを使用するために<br>
+                use Illuminate\Support\Facades\DB;<br>
+                と記入
               </div>
             </div>
             <div class="d-flex">
@@ -195,8 +174,8 @@
               </div>
             </div>
             <div style="width: 100%;" class="px-2 pt-5">
-              <div style="float: left;"><a href="4.html">&lt;&lt;前へ</a></div>
-              <div style="float: right;"><a href="6.html">&gt;&gt;次へ</a></div>
+              <div style="float: left;"><a href="5.html">&lt;&lt;前へ</a></div>
+              <div style="float: right;"><a href="7.html">&gt;&gt;次へ</a></div>
             </div>
           </div>
 
