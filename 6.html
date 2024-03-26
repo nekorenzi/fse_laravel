@@ -46,13 +46,13 @@
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
-                      class="code-block"><code><span class="keylblue">use</span> App\Models\Test;
-<span class="keylblue">use</span> Illuminate\Support\Facades\<span class="keysky">DB</span>;</code></pre>
+                      class="code-block"><code><span class="keyblue">use</span> App\Models\Test;
+<span class="keyblue">use</span> Illuminate\Support\Facades\<span class="keysky">DB</span>;<span class="comment">// DBを呼び出す</span></code></pre>
                   </div>
                 </div>
               </div>
               <div class="" style="margin-left:10px;"><br>
-                DBクラスを使用するために<br>
+                データベースを使用するために<br>
                 use Illuminate\Support\Facades\DB;<br>
                 と記入
               </div>
@@ -70,16 +70,15 @@
                     </div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
-                    <pre class="code-block"><code>@foreach ($result as $value)
-    &lt;<span class="keyblue">p</span>&gt;{{$value->name}}&lt;/<span class="keyblue">p</span>&gt;
-@endforeach</code></pre>
+                    <pre class="code-block"><code><span class="keyblue">public function</span> <span class="keylyellow">index2</span><span class="keypink">(</span><span class="keysky">Request</span> <span class="keylblue">$request</span><span class="keypink">){
+}</span></code></pre>
                   </div>
                 </div>
               </div>
               <div class="" style="margin-left:10px;"><br>
-                <br>
-                <br>
-                ＝　foreach ($result as $value)
+                public functionを下にコピーしてファンクション名をindex2に変更<br>
+                中は消しておく。<br>
+                viewのhello.blade.phpを複製してhello2.blade.phpにリネームする
               </div>
             </div>
             ●select * from tests
@@ -97,9 +96,9 @@
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
-                      class="code-block"><code><span class="comment">// indexメソッドに追加</span>
-<span class="keylblue">$result</span>=<span class="keysky">Test</span><span class="keylyellow">::all</span><span class="keyblue">()</span>;
-<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
+                      class="code-block"><code><span class="comment">// index2メソッドに追加</span>
+<span class="keylblue">$result</span>=<span class="keysky">DB</span><span class="keylyellow">::table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->get</span><span class="keyblue">()</span>;
+<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello2'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">result</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
 <span class="comment">// compact配列に追加してresultをviewに渡す</span></code></pre>
                   </div>
                 </div>
@@ -149,9 +148,9 @@
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
-                      class="code-block"><code><span class="comment">// indexメソッドに追加</span>
-<span class="keylblue">$resultfind</span>=<span class="keysky">Test</span><span class="keylyellow">::find</span><span class="keyblue">(</span><span class="keylyellow">2</span><span class="keyblue">)</span>;
-<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span>,<span class="keyorange">resultfind</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
+                      class="code-block"><code><span class="comment">// index2メソッドに追加</span>
+<span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylblue">$request</span><span class="keylyellow">->input</span><span class="keyyellow">(</span><span class="keyorange">'detailID'</span><span class="keyyellow">)</span><span class="keyblue">)</span>
+<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello2'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span>,<span class="keyorange">resultfind</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
 <span class="comment">// compact配列に追加してresultfindをviewに渡す</span></code></pre>
                   </div>
                 </div>
@@ -194,9 +193,9 @@
                   </div>
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
-                      class="code-block"><code><span class="comment">// indexメソッドに追加</span>
-<span class="keylblue">$resultwhere</span>=<span class="keysky">Test</span><span class="keylyellow">::where</span><span class="keyblue">(</span><span class="keyorange">'sei'</span>,<span class="keyorange">'='</span>,<span class="keylyellow">1</span><span class="keyblue">)</span> -><span class="keylyellow">get</span><span class="keyblue">()</span>;
-<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span>,<span class="keyorange">resultfind</span>,<span class="keyorange">resultwhere</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
+                      class="code-block"><code><span class="comment">// index2メソッドに追加</span>
+<span class="keylblue">$resultwhere</span>=<span class="keysky">DB</span><span class="keylyellow">::table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->where</span><span class="keyblue">(</span><span class="keyorange">'sei'</span>,<span class="keyorange">'='</span>,1<span class="keyblue">)</span><span class="keylyellow">->get</span><span class="keyblue">()</span>;
+<span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello2'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span>,<span class="keyorange">resultfind</span>,<span class="keyorange">resultwhere</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
 <span class="comment">// compact配列に追加してresultwhereをviewに渡す</span></code></pre>
                   </div>
                 </div>
@@ -231,7 +230,8 @@
                 ＝　foreach ($resultwhere as $value)
               </div>
             </div>
-            <div style="width: 100%;" class="px-2 pt-5">
+            プレビューで確認する
+            <div style="width: 100%;" class="px-2 pt-4">
               <div style="float: left;"><a href="5.html">&lt;&lt;前へ</a></div>
               <div style="float: right;"><a href="7.html">&gt;&gt;次へ</a></div>
             </div>
