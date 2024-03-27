@@ -149,7 +149,7 @@
                   <div class="d-flex justify-content-between align-items-center code-container">
                     <pre
                       class="code-block"><code><span class="comment">// index2メソッドに追加</span>
-<span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylblue">$request</span><span class="keylyellow">->input</span><span class="keyyellow">(</span><span class="keyorange">'detailID'</span><span class="keyyellow">)</span><span class="keyblue">)</span>
+<span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylyellow">2</span><span class="keyblue">)</span>
 <span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello2'</span>,<span class="keylyellow">compact</span><span class="keyyellow">(</span><span class="keyorange">'str'</span>,<span class="keyorange">str2'</span>,<span class="keyorange">result</span>,<span class="keyorange">resultfind</span><span class="keyyellow">)</span><span class="keyblue">)</span>;
 <span class="comment">// compact配列に追加してresultfindをviewに渡す</span></code></pre>
                   </div>
