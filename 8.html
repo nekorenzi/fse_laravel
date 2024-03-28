@@ -61,7 +61,7 @@
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
                   class="code-block"><code>&lt;<span class="keyblue">a</span> <span class="keylblue">href</span>=<span class="keyorange">"{{route('db',[],false)}}"</span>&gt;
-      <span class="comment">// {{route('ルートで付けた名前',[パラメータ],絶対パスならtrue相対パスならfalse)}}</span>
+      <span class="comment">// {{route('ルートで付けた名前',[パラメータ],ホスト名を含めるならtrue含めないならfalse)}}</span>
     &lt;<span class="keyblue">p</span>&gt;hello2へのリンク&lt;/<span class="keyblue">p</span>&gt;
 &lt;/<span class="keyblue">a</span>&gt;</code></pre>
               </div>
@@ -80,7 +80,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
-                  class="code-block"><code>$resultfind=DB::table("tests")->find($request->input('detailID'));</code></pre>
+                  class="code-block"><code><span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylblue">$request</span><span class="keylyellow">->input</span><span class="keyyellow">(</span><span class="keyorange">'detailID'</span><span class="keyyellow">)</span><span class="keyblue">)</span></code></pre>
               </div>
             </div>
             <div style="width: 100%;" class="px-2 pt-4">
