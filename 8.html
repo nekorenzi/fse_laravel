@@ -61,13 +61,13 @@
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
                   class="code-block"><code>&lt;<span class="keyblue">a</span> <span class="keylblue">href</span>=<span class="keyorange">"{{route('db',[],false)}}"</span>&gt;
-      <span class="comment">// {{route('ルートで付けた名前',[パラメータ],ホスト名を含めるならtrue含めないならfalse)}}</span>
+      <span class="comment">// {{route('ルートで付けた名前',[パラメータ],false)}}</span>
     &lt;<span class="keyblue">p</span>&gt;hello2へのリンク&lt;/<span class="keyblue">p</span>&gt;
 &lt;/<span class="keyblue">a</span>&gt;</code></pre>
               </div>
             </div>
 <h5 class="mt-2">■ページ内のリンクからデータを特定して値を返す</h5>
-            ●コントローラーでデータを抽出
+            ●コントローラーでデータを抽出<br>
             <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
                 <div class="placename small">app/Http/Controllers/HelloController.php</div>
@@ -80,9 +80,47 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
-                  class="code-block"><code><span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylblue">$request</span><span class="keylyellow">->input</span><span class="keyyellow">(</span><span class="keyorange">'detailID'</span><span class="keyyellow">)</span><span class="keyblue">)</span></code></pre>
+                  class="code-block"><code><span class="comment">// $resultfind=DB:table("tests")->find(2) を以下に書き換える</span>
+<span class="keylblue">$resultfind</span>=<span class="keysky">DB</span><span class="keylyellow">:table</span><span class="keyblue">(</span><span class="keyorange">"tests"</span><span class="keyblue">)</span><span class="keylyellow">->find</span><span class="keyblue">(</span><span class="keylblue">$request</span><span class="keylyellow">->input</span><span class="keyyellow">(</span><span class="keyorange">'detailID'</span><span class="keyyellow">)</span><span class="keyblue">)</span></code></pre>
               </div>
             </div>
+パラメータに式を入れてプライマリーキー(主キー)でデータを特定<br>
+プライマリーキー(主キー)であるidを使用して踏んだリンクのデータを特定させ表示先にデータを渡す<br>
+今回はhello.blade.phpで名前を選択するとhello2.blade.phpでその名前を表示させる
+<div class="code-wrap">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">resources/views/hello.blade.php</div>
+                <div>
+                  <button class="copy-button small">
+                    <img src="img/copy1.svg" alt="Copy icon" style="width:15px;">
+                    コピー
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre
+                  class="code-block"><code>&lt;<span class="keyblue">a</span>&gt; <span class="keylblue">href</span>=<span class="keyorange">"{{route('db',['detailID'=>$value->id],false)}}"</span>&lt;/<span class="keyblue">a</span>&gt;
+<span class="comment">//{{route('ルートで付けた名前',['detailID'=>$value->プライマリーキー],false)}}</span></code></pre>
+              </div>
+            </div>
+
+<div class="code-wrap mt-2">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">resources/views/hello2.blade.php</div>
+                <div>
+                  <button class="copy-button small">
+                    <img src="img/copy1.svg" alt="Copy icon" style="width:15px;">
+                    コピー
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre
+                  class="code-block"><code>&lt;<span class="keyblue">p</span>&gt;{{$resultfind->name}}&lt;/<span class="keyblue">p</span>&gt;</code></pre>
+              </div>
+            </div>
+helloのページの名前を選ぶとidが抽出されルートdbに渡され、表示されるページhello2のアドレスには抽出されたidのnameが表示される
+
             <div style="width: 100%;" class="px-2 pt-4">
               <div style="float: left;"><a href="7.html">&lt;&lt;前へ</a></div>
               <div style="float: right;"><a href="9.html">&gt;&gt;次へ</a></div>

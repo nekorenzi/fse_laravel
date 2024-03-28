@@ -40,7 +40,7 @@
                     <pre class="code-block"><code><span class="keyblue">DB_CONNECTION</span>=mysql
 <span class="keyblue">DB_HOST</span>=127.0.0.1
 <span class="keyblue">DB_PORT</span>=3306
-<span class="keyblue">DB_DATABASE</span>=[プロジェクト名]
+<span class="keyblue">DB_DATABASE</span>=freelaravel
 <span class="keyblue">DB_USERNAME</span>=root
 <span class="keyblue">DB_PASSWORD</span>=root</code></pre>
                   </div>
@@ -51,7 +51,7 @@
                 DB_HOST=127.0.0.1　　　 -> データがどこにあるか自分のパソコンの場合
                 　　　　　　　　 　　 　　　lorcalhost or コンピュータ名 or 127.0.0.1<br>
                 DB_PORT=3306　　　　　-> XAMPPのMySQLのPort番号を入れる<br>
-                DB_DATABASE=helloDB2　-> MySQLで作成したデータベースの名前<br>
+                DB_DATABASE=helloDB2　-> MySQLで作成したデータベースのプロジェクト名(今回はfreelaravel)<br>
                 DB_USERNAME=root <br>
                 DB_PASSWORD=root　 　 -> ユーザー名・パスワードあれば設定する<br>
               </div>
@@ -68,7 +68,7 @@
         <pre class="code-block"><code><span class="keyyellow">php</span> artisan make:migration create_tests_table --create=tests</code></pre>
     </div>
 </div>
-            datebace/migrations　に　[本日の日時]_create_[テーブル名]_table.php　で新しくデータが作成されているのでそれを開く
+            datebace/migrations　に　「本日の日時_create_テーブル名_table.php」　で新しくデータが作成されているのでそれを開く
             <div class="code-wrap">
               <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
                 <div class="placename small">database › migrations >
@@ -130,7 +130,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre class="code-block"><code><span class="keyyellow">php</span> artisan make:model Test
-<span class="comment">// php artisan make:model [末尾のsを取ったテーブル名]</span></code></pre>
+<span class="comment">// php artisan make:model 末尾のsを取ったテーブル名</span></code></pre>
               </div>
             </div>
             app>Modelsに作成される<br>
@@ -145,7 +145,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre class="code-block"><code><span class="keyblue">use</span> App\Models\<span class="keysky">Test</span>;
-<span class="comment">// use App\Models\[モデル作成で入力した名前];</span></code></pre>
+<span class="comment">// use App\Models\モデル作成で入力した名前;</span></code></pre>
               </div>
             </div>
           </div>

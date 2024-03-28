@@ -41,7 +41,7 @@
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre
                   class="code-block"><code><span class="keysky">Route</span><span class="keylyellow">::get</span><span class="keyyellow">(</span><span class="keyorange">'hello'</span>, <span class="keyorange">'App\Http\Controllers\HelloController@index'</span><span class="keyyellow">)</span>;
-<span class="comment">// Route::get('[URLに表示させる文字]', 'App\Http\Controllers\[コントローラー名]@[ファンクション名]');</span></code></pre>
+<span class="comment">// Route::get('URLに表示させる文字', 'App\Http\Controllers\コントローラー名@ファンクション名');</span></code></pre>
                   </code></pre>
               </div>
             </div>
@@ -55,7 +55,7 @@
               </div>
               <div class="d-flex justify-content-between align-items-center code-container">
                 <pre class="code-block"><code><span class="keyyellow">php</span> artisan make:controller HelloController
-<span class="comment">// php artisan make:controller [コントローラー名]</span></code></pre>
+<span class="comment">// php artisan make:controller コントローラー名</span></code></pre>
               </div>
             </div>
             Enterして実行
@@ -73,7 +73,7 @@
     <span class="comment">// indexメソッド</span>
     <span class="keyblue">public function</span> <span class="keylyellow">index</span><span class="keypink">(){</span>
         <span class="keypink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'hello'</span><span class="keyblue">)</span>;
-    <span class="comment">//  return view('[URLに表示させる文字');</span>
+    <span class="comment">//  return view('URLに表示させる文字');</span>
     <span class="keypink">}</span>
 <span class="keyyellow">}</span></code></pre>
               </div>
