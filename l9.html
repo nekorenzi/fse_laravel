@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Laravelフレームワーク</title>
+  <meta name="description" content="ディスクリプションを入力">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- css] -->
+  <link rel="stylesheet" href="css.css">
+  <!-- [if lt IE 9] -->
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <!-- [endif] -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+<!----- main ----->
+<div id="sidemenu">&nbsp;</div>
+<div class="content pt-2">
+<div class="row justify-content-center">
+<div class="col-md-8">
+<h5>■課題</h5>
+<div class="ind">
+同じプロジェクトを使用して名刺管理のページを作成する<br>
+<div style="padding:0 0 1em 1em;">使用データ : namecards.sql<br>仕様書 : テーブルレイアウトサンプル.xlsx</div>
+●使用するデータベースの情報をインポートする<br>MySQLデータベースを開き、freeDBを選択した状態で「インポート」<br>
+課題データの「namecards.sql」を選択してページ一番下の「インポート」<br>表示されたページを確認しインポートできているか確認<br><br>
+●名刺トップページを作成<br>直接のルートをコメントアウトにして下記を追記
+<div class="code-wrap">
+<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+<div class="placename small">app/Http/Controllers/HelloController.php</div>
+<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
+</div>
+<div class="d-flex justify-content-between align-items-center code-container">
+<pre class="code-block"><code><span class="keysky">Route</span><span class="keylyellow">::get</span><span class="keyyellow">(</span><span class="keyorange">'/'</span>, <span class="keyorange">'App\Http\Controller@index'</span><span class="keyyellow">)</span><span class="keylyellow">-&gt;</span><span class="keylyellow">name</span><span class="keyyellow">(</span><span class="keyorange">'index'</span><span class="keyyellow">)</span>;</code></pre>
+</div>
+</div>
+MenuControllerを作成
+<div class="code-wrap">
+<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+<div class="placename small">ターミナル</div>
+<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
+</div>
+<div class="d-flex justify-content-between align-items-center code-container">
+<pre class="code-block"><code><span class="keyyellow">php</span> artisan make:controller MenuController</code></pre>
+</div>
+</div>
+<div class="code-wrap pt-2">
+<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+<div class="placename small">app/Http/Controllers/MenuController.php</div>
+<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
+</div>
+<div class="d-flex justify-content-between align-items-center code-container">
+<pre class="code-block"><code>    <span class="keyblue">public function</span> <span class="keylyellow">index</span><span class="keypink">
+        <span class="keylpink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'index'</span><span class="keyblue">)</span>;
+    }</span></code></pre>
+</div>
+</div>
+resources/views/にindex.blade.phpを作成
+<div class="code-wrap pt-2">
+<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+<div class="placename small">app/Http/Controllers/MenuController.php</div>
+<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
+</div>
+<div class="d-flex justify-content-between align-items-center code-container">
+<pre class="code-block"><code>&lt;<span class="keyblue">h1</span>&gt;名刺管理&amp;lt/<span class="keyblue">h1</span>&gt;
+&lt;br&gt;
+&lt;<span class="keyblue">p</span>&gt;
+    &lt;<span class="keyblue">a</span> href=<span class="keyorange">{{ route('cardList',[],false) }}"</span>&gt;名刺管理一覧を開く&lt;/<span class="keyblue">a</span>&gt;
+&lt;/<span class="keyblue">p</span>&gt;</code></pre>
+</div></div>
+●残りのページを仕様書を参考に作成<br>
+<div style="padding:0 0 0 1em;">仕様書:テーブルレイアウトサンプル.xlsx<br>
+・画面設計のテーブルを作成する</div>
+
+</div>
+<div class="px-2 pt-4" style="width: 100%;">
+<div style="float: left;"><a href="l8.html">&lt;&lt;前へ</a></div>
+<div style="float: right;">&gt;&gt;次へ</div>
+</div>
+</div>
+</div>
+</div>
+<!----- /main ----->
+<p>&nbsp;</p>
+</body>
+
+</html>
