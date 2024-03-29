@@ -1,32 +1,35 @@
 h5 {
       font-weight: normal;
-      color:white;
+      color: white;
       background-color: black;
-      padding:5px;
+      padding: 5px;
 }
-.ind{ /* 1文字インデント*/
+
+.ind {
+      /* 1文字インデント*/
       margin-left: 1em;
       margin-bottom: 0.5em;
-      font-size:0.875rem;
+      font-size: 0.875rem;
 }
-.explanation{ /*　解説　*/
+
+.explanation {
+      /*　解説　*/
       font-size: 12px;
-      padding-right:2em;
-      margin-top:2px;
-      margin-bottom:-2em;
-      color:#698aab;
+      padding-right: 2em;
+      margin-top: 2px;
+      margin-bottom: -2em;
+      color: #698aab;
 }
-.overline{ /*　解説のライン　*/
-      text-decoration:overline;
-      text-decoration-color: red;
-}
+
+
 /*ボタンとアドレス*/
-.code-add{
-      background:#333;
-      color:white;
+.code-add {
+      background: #333;
+      color: white;
       border-radius: 6px 6px 0 0;
-      border:1px black;
+      border: 1px black;
 }
+
 .placename {
       margin: 5px 10px;
 }
@@ -40,7 +43,15 @@ h5 {
       text-decoration: none;
       cursor: pointer;
       border-radius: 6px;
-      margin: 1px 0 ;
+      margin: 1px 0;
+}
+
+/* ショートボタン */
+.copy-button-s {
+      background-color: black;
+      border-radius: 0px;
+      margin: 0;
+      padding: 0;
 }
 
 /* コードブロックのコンテナ */
@@ -48,17 +59,26 @@ h5 {
       background-color: black;
       padding: 12px;
       border-radius: 0 0 6px 6px;
+      white-space: nowrap;
+}
+
+/* コードブロックのコンテナショート */
+.code-con-s {
+      border-radius: 0;
+      margin: 0 15em 0 2em;
+      padding: 0;
+      white-space: nowrap;
 }
 
 /* コードブロックのスタイル */
 .code-block {
-      color:white;
-      font-size:0.875rem;
+      color: white;
+      font-size: 0.875rem;
       font-family: monospace;
       white-space: pre-wrap;
       word-wrap: break-word;
       margin: 0;
-      padding:0;
+      padding: 0;
 }
 
 /* CSS スタイルを使用してコードの色分けを設定 */
@@ -73,37 +93,43 @@ pre {
 .keyblue {
       color: #38a1db;
 }
+
 .keylblue {
       color: #89c3eb;
 }
+
 .keysky {
       color: #2dd6ba;
 }
+
 .keypink {
       color: #c550e5;
 }
+
 .keylpink {
       color: #da70d6;
 }
+
 .keygreen {
       color: #6a9955;
 }
+
 .keyyellow {
       color: #fffa00;
 }
-.keylyellow{
+
+.keylyellow {
       color: #f2f2b0;
 }
-.keyorange{
-      color:#e29676;
+
+.keyorange {
+      color: #e29676;
 }
-.keylorange{
-      color:#f39800;
+
+.keylorange {
+      color: #f39800;
 }
+
 .comment {
       color: gray;
 }
-
-
-
-
