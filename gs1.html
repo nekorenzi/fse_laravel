@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Laravelフレームワーク</title>
+  <meta name="description" content="ディスクリプションを入力">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
+  <!-- [if lt IE 9] -->
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <!-- [endif] -->
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!----- main ----->
+  <div id="sidemenu"></div>
+  <div class="content pt-2">
+    <container>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h5>Sourcetree と GitHub</h5>
+          <h6>&lt;ターミナルで階層を移動する&gt;</h6>
+          <div class="ind">
+            ■ターミナルで以下を実行<br>
+1. composer をインストール、更新
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>composer install</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>composer update</code></pre>
+                  </div>
+                </div>
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>composer dump-autoload</code></pre>
+                  </div>
+                </div>
+
+2.npm パッケージをインストール
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>npm i or npm install</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>yarn i or yarn install
+// ↑不要?</code></pre>
+                  </div>
+                </div>
+
+3.env ファイルの作成
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>cp .env.example .env</code></pre>
+                  </div>
+                </div>
+作成後、.env ファイルを開いて<br>
+DB_DATABASE=[ 今使用しているデータベースの名前に変更 ]<br>
+<br>
+4. マイグレートしてデータベースと同期
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan migrate</code></pre>
+                  </div>
+                </div>
+
+5. キーの生成
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan key:generate</code></pre>
+                  </div>
+                </div>
+
+6. キャッシュの削除
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan cache:clear</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan config:clear</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan route:clear</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan view:clear</code></pre>
+                  </div>
+                </div>
+
+<div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-1" role="group">
+                    <div class="placename small p-0 m-0">ターミナル</div>
+                    <div><button class="copy-button small p-0 m-0"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container p-1 m-0">
+                    <pre class="code-block"><code>php artisan session:clear</code></pre>
+                  </div>
+                </div>
+
+--- ここからは不要?
+<!-- run command on terminal to compile file it will watch your files for changes -->
+php artisan make:migration prescription_detail_veiw
+8. npm run watch
+<!-- run command on terminal to open project -->
+9. php artisan serve
+clear check
+10. php artisan optimize
+            <div class="code-wrap" style="flex: 0 0 50%;">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">ターミナル</div>
+                <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre class="code-block"><code><span class="keyyellow">cd</span> フォルダー名</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="ind mb-4" style="display: inline-block; width: 48%; box-sizing: border-box; vertical-align: top;">
+            ■上の階層に移動
+            <div class="code-wrap" style="flex: 0 0 50%;">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">ターミナル</div>
+                <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre class="code-block"><code><span class="keyyellow">cd..</span></code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <div class="w-50">
+              <h6>&lt;Laravel新規プロジェクトを作る&gt;</h6>
+              <a target="_blank" href="img\1.gif"><img class="img-fluid" src="img\1.gif" style="width: 90%; margin:0 1em;"></a>
+            </div>
+            <div class="w-50">
+              <div class="ind">
+                vscode のメニューバー＞「ターミナル(Terminal)」＞「新しいターミナル」を選択
+                (もしくは「ctrl＋Shift＋@」)<br>
+                ターミナルに「PS C:\xampp\htdocs>」と出る。<br>作成したい階層に異動した状態で、ここに続けて<br>
+                <span class="text-end explanation">　　　　　　　　　　　　　　授業では[project名]にfreelaravelを使用</span>
+                <div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                    <div class="placename small">ターミナル</div>
+                    <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container">
+                    <pre class="code-block"><code>PS C:\xampp\htdocs> composer create-project laravel/laravel project名 --prefer-dist “8.5.*” </code></pre>
+                  </div>
+                </div>
+                <div class="w-100 text-end explanation pb-2">--prefer-dist “8.5.*” はバージョンの指定</div>
+                もしくは
+                <div class="code-wrap">
+                  <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                    <div class="placename small">ターミナル</div>
+                    <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center code-container">
+                    <pre
+                      class="code-block"><code>PS C:\xampp\htdocs> composer create-project laravel/laravel project名 --prefer-dist）</code></pre>
+                  </div>
+                </div>
+                <div class="w-100 text-end explanation">※作成には5分程度かかります。</div>
+              </div>
+            </div>
+          </div>
+          <h6 class="">&lt;簡易サーバーを起動してプロジェクトをプレビュー&gt;</h6>
+          <div class="ind">
+            <div class="code-wrap">
+              <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+                <div class="placename small">ターミナル</div>
+                <div><button class="copy-button small"><img src="img/copy1.svg" alt="Copy icon" style="width:15px;"> コピー</button></div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center code-container">
+                <pre class="code-block"><code><span class="keyyellow">php</span> artisan serve</code></pre>
+              </div>
+            </div>
+            「 Ctrl＋c 」でプレビュー終了
+          </div>
+          <div style="width: 100%;" class="px-2 pt-4">
+            <div style="float: left;"><a href="l0.html">&lt;&lt;前へ</a></div>
+            <div style="float: right;"><a href="l2.html">&gt;&gt;次へ</a></div>
+          </div>
+        </div>
+      </div>
+    </container>
+
+  </div>
+  <!----- /main ----->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
