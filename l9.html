@@ -21,75 +21,112 @@
 </head>
 
 <body>
-<!----- main ----->
-<div id="sidemenu">&nbsp;</div>
-<div class="content pt-2">
-<div class="row justify-content-center">
-<div class="col-md-8">
-<h5>■課題</h5>
-<div class="ind">
-同じプロジェクトを使用して名刺管理のページを作成する<br>
-<div style="padding:0 0 1em 1em;">使用データ : namecards.sql<br>仕様書 : テーブルレイアウトサンプル.xlsx</div>
-●使用するデータベースの情報をインポートする<br>MySQLデータベースを開き、freeDBを選択した状態で「インポート」<br>
-課題データの「namecards.sql」を選択してページ一番下の「インポート」<br>表示されたページを確認しインポートできているか確認<br><br>
-●名刺トップページを作成<br>直接のルートをコメントアウトにして下記を追記
-<div class="code-wrap">
-<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-<div class="placename small">app/Http/Controllers/HelloController.php</div>
-<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
-</div>
-<div class="d-flex justify-content-between align-items-center code-container">
-<pre class="code-block"><code><span class="keysky">Route</span><span class="keylyellow">::get</span><span class="keyyellow">(</span><span class="keyorange">'/'</span>, <span class="keyorange">'App\Http\Controller@index'</span><span class="keyyellow">)</span><span class="keylyellow">-&gt;</span><span class="keylyellow">name</span><span class="keyyellow">(</span><span class="keyorange">'index'</span><span class="keyyellow">)</span>;</code></pre>
-</div>
-</div>
-MenuControllerを作成
-<div class="code-wrap">
-<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-<div class="placename small">ターミナル</div>
-<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
-</div>
-<div class="d-flex justify-content-between align-items-center code-container">
-<pre class="code-block"><code><span class="keyyellow">php</span> artisan make:controller MenuController</code></pre>
-</div>
-</div>
-<div class="code-wrap pt-2">
-<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-<div class="placename small">app/Http/Controllers/MenuController.php</div>
-<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
-</div>
-<div class="d-flex justify-content-between align-items-center code-container">
-<pre class="code-block"><code>    <span class="keyblue">public function</span> <span class="keylyellow">index</span><span class="keypink">
+  <!----- main ----->
+  <div id="sidemenu">&nbsp;</div>
+  <div class="content pt-2">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h5>■課題</h5>
+        <div class="ind">
+          <div class="d-flex">
+            <div style="width:40%;">
+              同じプロジェクトを使用して名刺管理のページを作成する<br>
+              <div style="padding:0 0 1em 1em;">使用データ : namecards.sql<br>仕様書 : テーブルレイアウトサンプル.xlsx</div>
+              ●使用するデータベースの情報をインポートする<br>MySQLデータベースを開き、freeDBを選択した状態で「インポート」<br>
+              課題データの「namecards.sql」を選択してページ一番下の「インポート」<br>表示されたページを確認しインポートできているか確認<br><br>
+              ●名刺トップページを作成<br>直接のルートをコメントアウトにして下記を追記
+            </div>
+            <div class="text-nowrap" style="width:57%;">
+              <a href="img/4.jpg" target="blank"><img src="img/4.jpg" style="width:52%"></a><a href="img/5.jpg"><img
+                  src="img/5.jpg" width="52%" style="padding-left:4px;"></a>
+            </div>
+
+          </div>
+
+          <div class="code-wrap">
+            <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+              <div class="placename small">app/Http/Controllers/HelloController.php</div>
+              <div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" />
+                  コピー </button></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center code-container">
+              <pre
+                class="code-block"><code><span class="keysky">Route</span><span class="keylyellow">::get</span><span class="keyyellow">(</span><span class="keyorange">'/'</span>, <span class="keyorange">'App\Http\Controller@index'</span><span class="keyyellow">)</span><span class="keylyellow">-&gt;</span><span class="keylyellow">name</span><span class="keyyellow">(</span><span class="keyorange">'index'</span><span class="keyyellow">)</span>;</code></pre>
+            </div>
+          </div>
+          MenuControllerを作成
+          <div class="code-wrap">
+            <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+              <div class="placename small">ターミナル</div>
+              <div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" />
+                  コピー </button></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center code-container">
+              <pre
+                class="code-block"><code><span class="keyyellow">php</span> artisan make:controller MenuController</code></pre>
+            </div>
+          </div>
+          <div class="code-wrap pt-2">
+            <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+              <div class="placename small">app/Http/Controllers/MenuController.php</div>
+              <div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" />
+                  コピー </button></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center code-container">
+              <pre class="code-block"><code>    <span class="keyblue">public function</span> <span class="keylyellow">index</span><span class="keypink">(){</span>
         <span class="keylpink">return</span> <span class="keylyellow">view</span><span class="keyblue">(</span><span class="keyorange">'index'</span><span class="keyblue">)</span>;
-    }</span></code></pre>
-</div>
-</div>
-resources/views/にindex.blade.phpを作成
-<div class="code-wrap pt-2">
-<div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
-<div class="placename small">app/Http/Controllers/MenuController.php</div>
-<div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" /> コピー </button></div>
-</div>
-<div class="d-flex justify-content-between align-items-center code-container">
-<pre class="code-block"><code>&lt;<span class="keyblue">h1</span>&gt;名刺管理&amp;lt/<span class="keyblue">h1</span>&gt;
+    <span class="keypink">}</span></code></pre>
+            </div>
+          </div>
+          resources/views/にindex.blade.phpを作成
+          <div class="code-wrap pt-2">
+            <div class="d-flex justify-content-between align-items-center code-add p-0" role="group">
+              <div class="placename small">app/Http/Controllers/MenuController.php</div>
+              <div><button class="copy-button small"> <img style="width: 15px;" src="img/copy1.svg" alt="Copy icon" />
+                  コピー </button></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center code-container">
+              <pre class="code-block"><code>&lt;<span class="keyblue">h1</span>&gt;名刺管理&amp;lt/<span class="keyblue">h1</span>&gt;
 &lt;br&gt;
 &lt;<span class="keyblue">p</span>&gt;
     &lt;<span class="keyblue">a</span> href=<span class="keyorange">{{ route('cardList',[],false) }}"</span>&gt;名刺管理一覧を開く&lt;/<span class="keyblue">a</span>&gt;
 &lt;/<span class="keyblue">p</span>&gt;</code></pre>
-</div></div>
-●残りのページを仕様書を参考に作成<br>
-<div style="padding:0 0 0 1em;">仕様書:テーブルレイアウトサンプル.xlsx<br>
-・画面設計のテーブルを作成する</div>
+            </div>
+            <div class="d-flex">
+              <div style="width:23%;" class="p-1">
+                ●残りのページを仕様書を参考に作成<br>
+                <div style="padding:0 0 0 1em;">仕様書:テーブルレイアウトサンプル.xlsx<br>
+                  ・画面設計のテーブルを作成する</div>
+                <div style="border:1px solid #999; padding:2px; margin-top:10em;">
+                  <h5 style="background: #999; font-size:1.5em; padding:2px;">memo</h5>
+                  ●仕様書とは<br>
+                  データベースの構成やページのイメージ・設計が書かれた物。<br>
+                  これらを参考にページを構築していく。<br>
+                  ●画面設計とは<br>
+                  ページのイメージが描かれた物
+                </div>
+              </div>
+            
+            <div style="width:54%;">
+              <a href="img/6.gif"><img src="img/6.gif" width="100%" class="p-1"></a><br><a href="img/7.gif"><img
+                  src="img/7.gif" width="100%" class="p-1"></a>
+            </div>
+            <div style="width:23%;" class="p-1">
+              <a href="img/8.jpg" target="blank"><img src="img/8.jpg" width="100%"></a>
+            </div>
+          </div>
+        </div>
 
-</div>
-<div class="px-2 pt-4" style="width: 100%;">
-<div style="float: left;"><a href="l8.html">&lt;&lt;前へ</a></div>
-<div style="float: right;">&gt;&gt;次へ</div>
-</div>
-</div>
-</div>
-</div>
-<!----- /main ----->
-<p>&nbsp;</p>
+        </div>
+        <div class="px-2 pt-4" style="width: 100%;">
+          <div style="float: left;"><a href="l8.html">&lt;&lt;前へ</a></div>
+          <div style="float: right;">&gt;&gt;次へ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!----- /main ----->
+  <p>&nbsp;</p>
 </body>
 
 </html>
