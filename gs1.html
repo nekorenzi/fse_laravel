@@ -27,169 +27,42 @@
       <div class="row justify-content-center">
         <div class="col-md-8">
           <h5 class="mb-1">Sourcetree と GitHub</h5>
-          辻のtask.jsonを使用したい場合は<a href="https://drive.google.com/drive/folders/1DbInGUoKNA_C7F1lv3TdjWgxPSI8rCR4?usp=drive_link" target="_blank">ここからダウンロード</a>
+          <h6>■必要ツールのインストール</h6>
           <div class="ind">
-            ■ターミナルで以下を実行<br>
-            1. composer をインストール、更新
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>composer install</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
+            ●Sourcetree のインストール<br>
+            <a href="https://mteam.jp/column/10210/#Git">https://mteam.jp/column/10210/#Git</a><br>
+            上記ページを見てインストールと会員登録をする（Gmail を作って登録）<br>
+            ●GitHub に登録、インストール<br>
+            <a href="https://github.co.jp/">https://github.co.jp/</a><br>
+            会員登録をする（Gmail を作って登録）<br>
+            ●GitHub Desktop をインストール<br>
+            <a
+              href="https://docs.github.com/ja/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop">ttps://docs.github.com/ja/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop</a><br>
+            ●Gitインストール<br>
+            <a href="https://gitforwindows.org/">https://gitforwindows.org/</a>
+          </div>
+          <h6>■SourcetreeとGitHubの作業イメージ</h6>
+          <div class="ind"><img src="img/gs0.png" style="width:60%;"></div>
+          <h6>■Sourcetreeを使ってリモートリポジトリのクローンを作成</h6>
+          <div class="d-flex ind">
+            <div style="width:40%;">
+              GitHub の [ &lt;&gt; Code ▼ ] をクリック、HTTPS のアドレスをコピーする。<br>
+              <br>
+              <br>
+              <br>
+              Sourcetree の [ Clone ] をクリックし、
+              上の枠に GitHub でコピーしたアドレスを貼り、<br>
+              下の枠の参照で自分の PC のフォルダを指定<br>
+              （今回は C:\xampp\htdocs\ に新規にフォルダを作成してそれを選ぶ）<br>
+              [ クローン ] を押してクローンを自分の PC に作成する<br>
             </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>composer update</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>composer dump-autoload</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            2.npm パッケージをインストール
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>npm i or npm install</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>yarn i or yarn install
-<span class="comment small">// ↑不要?</span></code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            3.env ファイルの作成
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>cp .env.example .env</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>$newValue = Read-Host "Enter the new value for DB_DATABASE"
-                  (Get-Content .env) | ForEach-Object {$_ -replace '^DB_DATABASE=.*', "DB_DATABASE=$newValue"} | Set-Content .env
-                  </code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-            <span style="padding-left:2em;">Enter the new value for DB_DATABASE: と出たら、使用するデータベース名を入力しEnter</span><br>
-            4. マイグレートしてデータベースと同期
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan migrate</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            5. キーの生成
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan key:generate</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            6. キャッシュの削除
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan cache:clear</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan config:clear</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan route:clear</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan view:clear</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan session:clear</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            --- ここからは不要?
-            <!-- run command on terminal to compile file it will watch your files for changes -->
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block"
-                  style="padding:2px;"><code>php artisan make:migration prescription_detail_veiw</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-
-            8. npm run watch
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>npm run watch</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-            <!-- run command on terminal to open project -->
-            9. php artisan serve
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan serve</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
-            </div>
-            clear check<br>
-            10. php artisan optimize
-            <div class="code-wrap">
-              <div class="d-flex justify-content-between align-items-center code-container code-con-s">
-                <pre class="code-block" style="padding:2px;"><code>php artisan optimize</code></pre>
-                <div><button class="copy-button small copy-button-s"><img src="img/copy1.svg" alt="Copy icon"
-                      style="width:15px;"> コピー</button></div>
-              </div>
+            <div style="width:60%; margin-top:-70px;">
+              <a href="img/gs1.gif" target="blank"><img src="img/gs1.gif" style="width:80%;"></a><br><a href="img/gs2.gif" target="blank"></a><img src="img/gs2.gif" style="width:80%;">
             </div>
           </div>
           <div style="width: 100%;" class="px-2 pt-4">
-            <div style="float: left;"><a href="l0.html">&lt;&lt;前へ</a></div>
-            <div style="float: right;"><a href="l2.html">&gt;&gt;次へ</a></div>
+            <div style="float: left;"><a href="index.html">&lt;&lt;前へ</a></div>
+            <div style="float: right;"><a href="gs2.html">&gt;&gt;次へ</a></div>
           </div>
         </div>
       </div>
@@ -200,7 +73,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="script.js"></script>
 </body>
 
